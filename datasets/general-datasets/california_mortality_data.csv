@@ -1,0 +1,89 @@
+﻿All Causes of Death Rates  Table for California by County
+"All Races (includes Hispanic/Latino), Male, All Ages, 2019-2023"
+Sorted by Rate
+
+County,FIPS,"Age-Adjusted Death Rate(†) - deaths per 100,000","Lower 95% Confidence Interval","Upper 95% Confidence Interval",Average Annual Count,Recent Trend,"Recent 5-Year Trend (‡) in Death Rates","Lower 95% Confidence Interval","Upper 95% Confidence Interval"
+"California",06000,836.8 ,834.9, 838.6,163818,stable,-0.6 ,-2.3, 0.3
+"United States",00000,964.9 ,964.2, 965.5,1683551,falling,-1.1 ,-2.8, -0.2
+"Alpine County",06003,1353.1 ,980.2, 1828.6,11,NA,NA,NA,NA
+"Shasta County",06089,1190 ,1160.6, 1220.1,1343,stable,-0.1 ,-2.9, 1.8
+"Del Norte County",06015,1184.2 ,1109.8, 1262.5,202,rising,1.9 ,1.1, 3.4
+"Siskiyou County",06093,1139.3 ,1082.7, 1198.2,366,rising,0.6 ,0.1, 1.1
+"Kern County",06029,1131.7 ,1115.7, 1148,4199,stable,0.6 ,-2.8, 2.5
+"Lake County",06033,1107 ,1062.2, 1153.4,525,stable,0.1 ,-0.6, 2.6
+"Humboldt County",06023,1097.2 ,1062.7, 1132.6,829,rising,1.9 ,0.8, 4.8
+"Stanislaus County",06099,1096.1 ,1077.2, 1115.3,2690,stable,-0.5 ,-3.6, 1.5
+"Tehama County",06103,1090.4 ,1043.7, 1138.8,441,rising,2.4 ,1.1, 5.0
+"Glenn County",06021,1089.9 ,1015, 1168.9,167,rising,3.4 ,1.6, 8.0
+"Butte County",06007,1083.2 ,1055.6, 1111.3,1244,rising,1.6 ,0.7, 3.9
+"Modoc County",06049,1076.4 ,956, 1209.3,75,rising,5.1 ,1.1, 12.0
+"San Bernardino County",06071,1068.4 ,1058.4, 1078.4,9697,stable,-1.2 ,-3.7, 0.4
+"Tulare County",06107,1061.8 ,1040.5, 1083.5,2023,stable,-2.0 ,-5.0, 0.2
+"Yuba County",06115,1056.4 ,1008.6, 1105.8,399,stable,0.7 ,-0.5, 5.3
+"Fresno County",06019,1046.6 ,1032.6, 1060.7,4524,stable,-0.2 ,-2.4, 1.0
+"San Joaquin County",06077,1022.7 ,1007.3, 1038.3,3558,stable,-1.3 ,-6.4, 2.5
+"Merced County",06047,1017.7 ,990.9, 1045,1174,stable,-1.9 ,-4.3, 0.1
+"Madera County",06039,1000.2 ,967.6, 1033.6,748,stable,-1.7 ,-5.9, 0.7
+"Imperial County",06025,994.4 ,964, 1025.6,829,falling,-4.4 ,-10.0, -0.3
+"Tuolumne County",06109,966.1 ,922.6, 1011.5,421,rising,1.9 ,1.0, 4.1
+"Mendocino County",06045,936.3 ,899.5, 974.3,548,stable,-1.1 ,-6.3, 3.6
+"Inyo County",06027,935.5 ,861.1, 1015.3,132,rising,2.9 ,0.2, 8.9
+"Sacramento County",06067,921 ,911.1, 930.9,6960,stable,0.5 ,-0.7, 1.4
+"Sutter County",06101,920.7 ,884, 958.6,488,falling,-2.5 ,-4.5, -0.5
+"Kings County",06031,917.3 ,882.6, 953,574,stable,-1.1 ,-3.8, 1.3
+"Lassen County",06035,910.3 ,848.4, 975.6,169,stable,-3.5 ,-9.6, 1.2
+"Riverside County",06065,907.2 ,899.6, 914.8,11335,stable,-1.0 ,-2.8, 0.1
+"Solano County",06095,901 ,883.2, 919.1,2074,rising,1.5 ,0.7, 3.1
+"Plumas County",06063,864.1 ,793.6, 940,142,stable,-0.4 ,-1.2, 0.3
+"Calaveras County",06009,853.4 ,808.2, 900.8,322,stable,-0.2 ,-0.6, 0.3
+"Amador County",06005,848.5 ,802.9, 896.4,288,stable,0.6 ,-0.2, 4.0
+"Trinity County",06105,841.8 ,759.7, 931,107,falling,-1.7 ,-2.6, -0.8
+"Los Angeles County",06037,837 ,833.3, 840.8,40044,stable,-1.1 ,-3.3, 0.4
+"Yolo County",06113,833.5 ,806.9, 860.8,773,stable,0.7 ,-0.2, 3.4
+"Colusa County",06011,830.6 ,755.9, 910.8,95,stable,0.6 ,-1.8, 6.7
+"Mariposa County",06043,827.1 ,754.1, 906.1,121,stable,-0.4 ,-1.2, 0.5
+"San Benito County",06069,827.1 ,778.5, 877.7,234,stable,1.3 ,0.0, 7.0
+"San Diego County",06073,800.6 ,794.3, 806.9,12947,stable,-0.6 ,-1.6, 0.1
+"Sonoma County",06097,786.1 ,771.2, 801.3,2253,stable,0.7 ,-0.2, 2.8
+"Ventura County",06111,775.2 ,763.5, 787.1,3440,stable,0.6 ,-1.4, 1.9
+"Placer County",06061,768.5 ,753, 784.3,1934,stable,0.7 ,0.0, 2.4
+"Santa Barbara County",06083,767.1 ,751.2, 783.3,1816,stable,-0.2 ,-1.4, 0.7
+"El Dorado County",06017,764.7 ,742.2, 787.7,974,stable,0.9 ,-0.4, 4.6
+"Nevada County",06057,764.3 ,734.9, 794.7,600,stable,0.7 ,-0.3, 4.2
+"San Luis Obispo County",06079,763.7 ,745.1, 782.8,1365,rising,1.0 ,0.3, 2.7
+"Orange County",06059,747.7 ,741.6, 753.8,12091,stable,-0.3 ,-1.9, 0.6
+"Contra Costa County",06013,741.2 ,731.4, 751.2,4463,stable,0.8 ,0.0, 2.3
+"Napa County",06055,740.2 ,715, 766.1,681,stable,-0.2 ,-1.4, 2.6
+"Monterey County",06053,736.5 ,720, 753.4,1554,rising,1.2 ,0.1, 3.6
+"Sierra County",06091,726.5 ,583.8, 901.7,22,stable,-1.5 ,-11.7, 1.1
+"Santa Cruz County",06087,726 ,705.4, 747,1028,rising,1.7 ,0.3, 4.0
+"San Francisco County",06075,714.4 ,703.8, 725.2,3556,stable,1.1 ,-0.2, 2.1
+"Alameda County",06001,707.9 ,699.5, 716.3,5698,stable,-0.7 ,-2.2, 0.3
+"Santa Clara County",06085,616.1 ,609, 623.4,5836,stable,-1.0 ,-2.4, 0.0
+"San Mateo County",06081,610.5 ,599.8, 621.3,2550,stable,0.1 ,-0.7, 1.7
+"Marin County",06041,610.3 ,593.6, 627.3,1095,rising,1.4 ,0.5, 2.8
+"Mono County",06051,500.3 ,431.8, 577.3,42,rising,9.4 ,0.2, 16.8
+
+Suggested Citation:
+HDPulse: An Ecosystem of Minority Health and Health Disparities Resources. National Institute on Minority Health and Health Disparities. Created 6/8/2025. Available from https://hdpulse.nimhd.nih.gov
+
+Notes:
+Source: Death data provided by the National Vital Statistics System [ https://www.cdc.gov/nchs/nvss/index.htm ]. 
+
+
+Trend
+   Rising when 95% confidence interval of average annual percent change is above 0.
+   Stable when 95% confidence interval of average annual percent change includes 0.
+   Falling when 95% confidence interval of average annual percent change is below 0.
+
+"(†) Death rates (deaths per 100,000 population per year) are age-adjusted to the 2000 US standard population [https://www.seer.cancer.gov/stdpopulations/stdpop.20ages.html] (20 age groups: <1, 1-4, 5-9, ... , 80-84, 85-89, 90+). Rates calculated using SEER*Stat. Population counts for denominators are based on Census populations as modified [https://seer.cancer.gov/popdata/] by NCI. The US Population Data File [https://seer.cancer.gov/popdata/] is used for mortality data. \n"
+State Health Departments [ https://www.usa.gov/state-health ] may provide more current or more local data.
+"(‡) The Average Annual Percent Change (AAPC) is based on the APCs calculated by Joinpoint Regression Program (Version 4.9.0.0). Due to data availability issues, the time period used in the calculation of the joinpoint regression model may differ for selected counties. \n"
+"For more information about All Causes of Death, see the definitions at http://hdpulse.nimhd.nih.gov/data/cod.html#all."
+Data for United States does not include Puerto Rico.
+
+"Please note that the data comes from different sources. Due to different years ( https://hdpulse.nimhd.nih.gov/data/historicaltrend/differences.html ) of data availability, most of the trends are AAPCs based on APCs but some are APCs calculated in SEER*Stat. ( https://seer.cancer.gov/seerstat/ ) Please refer to the source for each graph for additional information. "
+
+"Interpret Rankings provides insight into interpreting mortality statistics.  When the population size for a denominator is small, the rates may be unstable.  A rate is unstable when a small change in the numerator (e.g., only one or two additional deaths) has a dramatic effect on the calculated rate."
+"Rural-Urban Continuum Codes (developed by the United States Department of Agriculture (USDA) [ https://www.ers.usda.gov/data-products/rural-urban-continuum-codes.aspx ] ) are used on this website to distinguish which counties are rural and urban; additionally, how much of a state’s population is classified as rural or urban. For more information about using Rural-Urban Continuum Codes, go to the rural urban [ http://hdpulse.nimhd.nih.gov/data/ruralurban.html ] page."
+
