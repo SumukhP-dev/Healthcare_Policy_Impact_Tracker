@@ -1,3 +1,7 @@
+#publisher,California Health and Human Services 
+#name,Geography,Year,Numerator,Denominator
+#datatype,'str','str','float','float'
+
 Geography,Year,Numerator,Denominator
 Alameda,2007,107.0,21522.0
 Alameda,2007-2009,4913.0,1378297.0

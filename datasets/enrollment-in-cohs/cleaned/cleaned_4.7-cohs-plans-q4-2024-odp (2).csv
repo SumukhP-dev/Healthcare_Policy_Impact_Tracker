@@ -1,3 +1,7 @@
+#publisher,California Health and Human Services 
+#name,Year,County Organized Health System (COHS) Health Plan, Number of Eligible Individuals 
+#datatype,'int','str','int'
+
 Year,County Organized Health System (COHS) Health Plan, Number of Eligible Individuals 
 2016,Marin,11584
 2016,Mariposa,6175

@@ -1,3 +1,7 @@
+#publisher,California Health and Human Services 
+#name,,POPULATION_NAME,FISCAL_YEAR,RACE_GRP,TOTAL_CT,MHS1_CT,MHS5_CT
+#datatype,'int','str','int','str','float','float','float'
+
 ,POPULATION_NAME,FISCAL_YEAR,RACE_GRP,TOTAL_CT,MHS1_CT,MHS5_CT
 0,Alameda,2019,R1 Alaskan Native or American Indian,851.0,109.0,25.0
 1,Alameda,2019,R2 Asian or Pacific Islander,81208.0,4318.0,911.0
