@@ -5,7 +5,7 @@ import { ComposableMap, Geographies, Geography } from "react-simple-maps";
 import axios, { AxiosResponse } from "axios";
 
 const geoUrl =
-  "https://raw.githubusercontent.com/SumukhP-dev/Healthcare_Policy_Impact_Tracker/refs/heads/main/frontend-next-webapp/my-app/public/california-json-map.geojson";
+  "https://raw.githubusercontent.com/SumukhP-dev/Healthcare_Policy_Impact_Tracker/refs/heads/main/frontend-next-webapp/my-app/public/california-json-map.json";
 
 let content: AxiosResponse<any, any>;
 
