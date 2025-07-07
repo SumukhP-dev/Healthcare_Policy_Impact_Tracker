@@ -1,3 +1,7 @@
+#publisher,California Health and Human Services 
+#name,Year,predicted_mean,% Change
+#datatype,'int','float','float'
+
 Years,predicted_mean,% Change
 2018,232.0,
 2019,5.276889815631405,-97.72547852774508
