@@ -7,6 +7,8 @@ import {
 } from "react-simple-maps";
 import React, { memo } from "react";
 import "bootstrap/dist/css/bootstrap.min.css"; // Import bootstrap CSS
+import ReactTooltip from "react-tooltip";
+import { Tooltip } from "react-bootstrap";
 
 const geoUrl =
   "https://raw.githubusercontent.com/SumukhP-dev/Healthcare_Policy_Impact_Tracker/refs/heads/main/frontend-next-webapp/my-app/public/california-json-map2.geojson";
@@ -35,13 +37,13 @@ const MapChart = ({
   setTooltipContent: (content: string) => void;
 }) => {
   return (
-    <div className="flex h-screen w-screen items-center justify-center">
+    <div className="flex col-start-2">
       <ComposableMap
-        width={2000}
+        width={700}
         height={1000}
         projectionConfig={{
-          scale: 5250,
-          center: [-119.4179, 36.7783], // Centering on California
+          scale: 3500,
+          center: [-114, 34.7783], // Centering on California
         }}
       >
         <ZoomableGroup>
@@ -52,7 +54,7 @@ const MapChart = ({
                   key={geo.rsmKey}
                   geography={geo}
                   onMouseEnter={() => {
-                    setTooltipContent(displayText(geo.properties.name));
+                    setTooltipContent("the");
                   }}
                   onMouseLeave={() => {
                     setTooltipContent("");
