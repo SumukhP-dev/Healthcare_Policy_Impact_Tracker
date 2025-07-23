@@ -4860,7 +4860,7 @@ const MapChart = ({
         width={800}
         height={900}
         projectionConfig={{
-          scale: 4500,
+          scale: 5500,
           center: [-117, 36.7783], // Centering on California
         }}
       >
