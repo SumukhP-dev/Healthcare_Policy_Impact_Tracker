@@ -2,6 +2,7 @@ import * as React from "react";
 import Box from "@mui/material/Box";
 import { ThemeProvider } from "@mui/material/styles";
 import Image from "next/image";
+import { useSelector } from "react-redux";
 
 export default function BoxSx() {
   return (
@@ -28,8 +29,8 @@ export default function BoxSx() {
         >
           <div className="flex flex-row justify-center items-center block">
             <h1>
-              San Francisco <br></br>
-              Decrease 15%
+              {useSelector((state: any) => state.county.value)} <br></br>
+              {useSelector((state: any) => state.percent.value)}
             </h1>
             <Image
               src="/arrows/down-arrow/green-down-arrow.png"

@@ -82,17 +82,19 @@ const californiaCounties: Array<string> = [
   "Yolo",
   "Yuba",
 ];
-const fetcher = (county) => fetch(county).then((res) => res.json());
-
-export async function getLocalData(fileName: string) {
-  // Get the path of the json file
-  const filePath = path.join(
-    process.cwd(),
-    "public/datasets/2019-medi-cal-expansions/infant-mortality-data/" +
-      fileName +
-      ".json"
-  );
-}
+const fetcher = (url) => fetch(url).then((res) => res.json());
+const { mortalityData, error, isLoading } = useSWR(
+  "https://api.github.com/repos/vercel/swr",
+  fetcher
+);
+const { infantMortalityData, error2, isLoading2 } = useSWR(
+  "https://api.github.com/repos/vercel/swr",
+  fetcher
+);
+const { cohsData, error3, isLoading3 } = useSWR(
+  "https://api.github.com/repos/vercel/swr",
+  fetcher
+);
 
 const fillColor = (geo) => {
   console.log("Geo properties name:", geo.properties.name);
@@ -100,13 +102,17 @@ const fillColor = (geo) => {
   const countyName = geo.properties.name;
   let color = "#d2d2d292"; // Default color
 
-  // getLocalData(countyName).then((data) => {
-  //   console.log("Data for county:", countyName, data);
+  const statistics: string = useSelector(
+    (state: any) => state.statistics.value
+  );
+  console.log("Statistics value:", statistics);
 
-  //   if (data != null) {
-  //     color = "#0EA5E9";
-  //   }
-  // });
+  if (statistics === "Mortality") {
+    const value = mortalityData[countyName];
+    console.log("Mortality value for", countyName, ":", value);
+  } else if (statistics === "InfantMortality") {
+  } else if (statistics === "CountyOrganizedHealthSystem") {
+  }
 
   return color;
 };
@@ -117,6 +123,8 @@ const setCountyData = (geo) => {
 
   const dispatch = useDispatch();
   dispatch(setCounty(countyName));
+
+  console.log("County set to:", countyName);
 
   return "#0EA5E9";
 };
