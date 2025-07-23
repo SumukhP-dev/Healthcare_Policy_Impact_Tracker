@@ -14,17 +14,14 @@ export default function App() {
   const [content, setContent] = useState("");
 
   useEffect(() => {
-    // This effect uses the `value` variable,
-    // so it "depends on" `value`.
-    console.log(content);
-  }, [content]);
+    require("bootstrap/dist/js/bootstrap.bundle.min.js");
+  }, []);
 
   return (
     <div className="flex h-screen w-screen grid cols-5">
       <SWRProvider>
         <LawSelectors />
         <MapChart setTooltipContent={setContent} />
-        <Tooltip>{content}</Tooltip>
         <DetailsWidget />
         <TimeLine />
       </SWRProvider>

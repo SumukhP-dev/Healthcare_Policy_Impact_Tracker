@@ -1,40 +1,30 @@
-import "bootstrap/dist/css/bootstrap.min.css"; // Import bootstrap CSS
 import { useState } from "react";
 import { setStatistics } from "../src/app/store/features/statisticsSlice";
 import { useDispatch, useSelector } from "react-redux";
 
 const LawSelectors = () => {
-  const [isOpen, setIsOpen] = useState(false);
-
-  const toggleDropdown = (event: MouseEvent) => {
-    event.preventDefault();
-    setIsOpen(!isOpen);
-  };
-
-  const hideDropdown = () => {
-    setIsOpen(false);
-  };
-
-  const hideDropdownMortality = () => {
-    setIsOpen(false);
-
+  const setMortalityStatistics = () => {
     const dispatch = useDispatch();
     dispatch(setStatistics("Mortality"));
+
+    console.log("Mortality statistics selected");
   };
 
-  const hideDropdownInfantMortality = () => {
-    setIsOpen(false);
-
+  const setInfantMortalityStatistics = () => {
     const dispatch = useDispatch();
     dispatch(setStatistics("InfantMortality"));
+
+    console.log("Infant Mortality statistics selected");
   };
 
-  const hideDropdownCountyOrganizedHealthSystem = () => {
-    setIsOpen(false);
-
+  const setCountyOrganizedHealthSystemStatistics = () => {
     const dispatch = useDispatch();
     dispatch(setStatistics("CountyOrganizedHealthSystem"));
+
+    console.log("County Organized Health System statistics selected");
   };
+
+  let statistics: string = useSelector((state: any) => state.statistics.value);
 
   return (
     <div className="">
@@ -44,69 +34,36 @@ const LawSelectors = () => {
         </button>
       </div>
 
-      <ul className="navbar-nav d-grid p-5 col-start-1 col-end-1 max-w-20 max-h-20 mb-10">
-        <li className="nav-item dropdown">
-          <a
-            href="#"
-            className="nav-link dropdown-toggle"
-            id="navbarDropdown"
-            role="button"
-            aria-expanded={isOpen}
-            onClick={toggleDropdown}
-          >
-            Dropdown
-          </a>
-          <ul
-            className={`dropdown-menu${isOpen ? " show" : ""}`}
-            style={{ right: 0 }}
-            aria-labelledby="navbarDropdown"
-          >
-            <li>
-              <a
-                href="#action"
-                className="dropdown-item"
-                onClick={hideDropdownMortality}
-              >
-                Mortality
-              </a>
-            </li>
-            <li>
-              <hr className="dropdown-divider" />
-            </li>
-            <li>
-              <a
-                href="#another-action"
-                className="dropdown-item"
-                onClick={hideDropdownInfantMortality}
-              >
-                Infant Mortality
-              </a>
-            </li>
-            <li>
-              <hr className="dropdown-divider" />
-            </li>
-            <li>
-              <a
-                href="#something-else-here"
-                className="dropdown-item"
-                onClick={hideDropdownCountyOrganizedHealthSystem}
-              >
-                County Organized Health System
-              </a>
-            </li>
-          </ul>
-          {isOpen && (
-            <button
-              type="button" // <4>
-              className="modal-backdrop opacity-0"
-              style={{ zIndex: 999, cursor: "auto" }}
-              onClick={hideDropdown}
+      <div className="dropdown px-5">
+        <button
+          className="btn btn-primary dropdown-toggle"
+          type="button"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
+        >
+          Dropdown button
+        </button>
+        <ul className="dropdown-menu">
+          <li>
+            <a className="dropdown-item" onClick={setMortalityStatistics}>
+              Mortality
+            </a>
+          </li>
+          <li>
+            <a className="dropdown-item" onClick={setInfantMortalityStatistics}>
+              Infant Mortality
+            </a>
+          </li>
+          <li>
+            <a
+              className="dropdown-item"
+              onClick={setCountyOrganizedHealthSystemStatistics}
             >
-              Hide dropdown
-            </button>
-          )}
-        </li>
-      </ul>
+              County Organized Health System
+            </a>
+          </li>
+        </ul>
+      </div>
     </div>
   );
 };

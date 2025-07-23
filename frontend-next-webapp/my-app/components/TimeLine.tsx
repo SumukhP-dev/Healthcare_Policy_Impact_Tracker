@@ -6,37 +6,49 @@ import { setYear } from "../src/app/store/features/yearSlice";
 const TimeLine = () => {
   const data = [
     {
-      title: "2010",
-    },
-    {
-      title: "2011",
-    },
-    {
-      title: "2012",
-    },
-    {
-      title: "2013",
-    },
-    {
-      title: "2014",
-    },
-    {
-      title: "2015",
-    },
-    {
-      title: "2016",
-    },
-    {
-      title: "2017",
-    },
-    {
-      title: "2018",
-    },
-    {
       title: "2019",
     },
     {
       title: "2020",
+    },
+    {
+      title: "2021",
+    },
+    {
+      title: "2022",
+    },
+    {
+      title: "2023",
+    },
+    {
+      title: "2024",
+    },
+    {
+      title: "2025",
+    },
+    {
+      title: "2026",
+    },
+    {
+      title: "2027",
+    },
+    {
+      title: "2028",
+    },
+    {
+      title: "2029",
+    },
+    {
+      title: "2030",
+    },
+    {
+      title: "2031",
+    },
+    {
+      title: "2032",
+    },
+    {
+      title: "2033",
     },
   ];
   const year = useSelector((state: any) => state.year.value);
@@ -58,8 +70,8 @@ const TimeLine = () => {
           items={data}
           mode="HORIZONTAL"
           disableToolbar={true}
-          activeItemIndex={(year - 2010) % data.length}
-          itemWidth={150}
+          activeItemIndex={(year - 2019) % data.length}
+          itemWidth={110}
         />
       </div>
     </div>

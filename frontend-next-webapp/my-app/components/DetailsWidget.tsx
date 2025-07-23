@@ -6,7 +6,7 @@ import { useSelector } from "react-redux";
 
 export default function BoxSx() {
   return (
-    <div className="flex col-start-3 col-end-5 m-5">
+    <div className="flex col-start-3 col-end-5 m-5 min-w-md">
       <ThemeProvider
         theme={{
           palette: {
