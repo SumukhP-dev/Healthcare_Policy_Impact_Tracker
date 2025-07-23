@@ -3,6 +3,20 @@ import { setStatistics } from "../src/app/store/features/statisticsSlice";
 import { useDispatch, useSelector } from "react-redux";
 
 const LawSelectors = () => {
+  let percent = useSelector((state: any) => state.percent.value);
+  let statistics = useSelector((state: any) => state.statistics.value);
+
+  const setDropdownTitle = () => {
+    if (statistics === "Mortality") {
+      return "Mortality";
+    } else if (statistics === "InfantMortality") {
+      return "Infant Mortality";
+    } else if (statistics === "CountyOrganizedHealthSystem") {
+      return "County Organized Health System";
+    }
+    return "Select Statistics";
+  };
+
   const setMortalityStatistics = (dispatch) => {
     dispatch(setStatistics("Mortality"));
 
@@ -38,7 +52,7 @@ const LawSelectors = () => {
           data-bs-toggle="dropdown"
           aria-expanded="false"
         >
-          Dropdown button
+          {setDropdownTitle()}
         </button>
         <ul className="dropdown-menu">
           <li>

@@ -21,67 +21,6 @@ import { setPercent } from "../src/app/store/features/percentSlice";
 import useSWR, { mutate } from "swr";
 import { useRouter } from "next/navigation";
 
-const californiaCounties: Array<string> = [
-  "Alameda",
-  "Alpine",
-  "Amador",
-  "Butte",
-  "Calaveras",
-  "Colusa",
-  "Contra Costa",
-  "Del Norte",
-  "El Dorado",
-  "Fresno",
-  "Glenn",
-  "Humboldt",
-  "Imperial",
-  "Inyo",
-  "Kern",
-  "Kings",
-  "Lake",
-  "Lassen",
-  "Los Angeles",
-  "Madera",
-  "Marin",
-  "Mariposa",
-  "Mendocino",
-  "Merced",
-  "Modoc",
-  "Mono",
-  "Monterey",
-  "Napa",
-  "Nevada",
-  "Orange",
-  "Placer",
-  "Plumas",
-  "Riverside",
-  "Sacramento",
-  "San Benito",
-  "San Bernardino",
-  "San Diego",
-  "San Francisco",
-  "San Joaquin",
-  "San Luis",
-  "Obispo",
-  "San Mateo",
-  "Santa Barbara",
-  "Santa Clara",
-  "Santa Cruz",
-  "Shasta",
-  "Sierra",
-  "Siskiyou",
-  "Solano",
-  "Sonoma",
-  "Stanislaus",
-  "Sutter",
-  "Tehama",
-  "Trinity",
-  "Tulare",
-  "Tuolumne",
-  "Ventura",
-  "Yolo",
-  "Yuba",
-];
 // const fetcher = (url) => fetch(url).then((res) => res.json());
 
 const getMortalityDataDetails = () => {
@@ -4672,11 +4611,27 @@ const MapChart = ({
       const percentChange = value ? value["% Change"] : null;
       if (percentChange !== null) {
         if (percentChange < 0) {
-          color = "#f87171"; // Red for negative change
+          if (percentChange <= -75) {
+            color = "#0b6a3c";
+          } else if (percentChange <= -50) {
+            color = "#239b5d";
+          } else if (percentChange <= -25) {
+            color = "#34be76";
+          } else if (percentChange < 0) {
+            color = "#79d2a0";
+          }
         } else if (percentChange > 0) {
-          color = "#34d399"; // Green for positive change
+          if (percentChange >= 75) {
+            color = "#820000";
+          } else if (percentChange >= 50) {
+            color = "#B30000";
+          } else if (percentChange >= 25) {
+            color = "#E70000";
+          } else if (percentChange > 0) {
+            color = "#FF1818";
+          }
         } else {
-          color = "#d2d2d292"; // Gray for no change
+          color = "#d2d2d292";
         }
       }
     } else if (statistics === "InfantMortality") {
@@ -4707,11 +4662,27 @@ const MapChart = ({
       const percentChange = value ? value["% Change"] : null;
       if (percentChange !== null) {
         if (percentChange < 0) {
-          color = "#f87171"; // Red for negative change
+          if (percentChange <= -75) {
+            color = "#0b6a3c";
+          } else if (percentChange <= -50) {
+            color = "#239b5d";
+          } else if (percentChange <= -25) {
+            color = "#34be76";
+          } else if (percentChange < 0) {
+            color = "#79d2a0";
+          }
         } else if (percentChange > 0) {
-          color = "#34d399"; // Green for positive change
+          if (percentChange >= 75) {
+            color = "#820000";
+          } else if (percentChange >= 50) {
+            color = "#B30000";
+          } else if (percentChange >= 25) {
+            color = "#E70000";
+          } else if (percentChange > 0) {
+            color = "#FF1818";
+          }
         } else {
-          color = "#d2d2d292"; // Gray for no change
+          color = "#d2d2d292";
         }
       }
     } else if (statistics === "CountyOrganizedHealthSystem") {
@@ -4750,11 +4721,27 @@ const MapChart = ({
       const percentChange = value ? value["% Change"] : null;
       if (percentChange !== null) {
         if (percentChange < 0) {
-          color = "#f87171"; // Red for negative change
+          if (percentChange <= -75) {
+            color = "#820000";
+          } else if (percentChange <= -50) {
+            color = "#B30000";
+          } else if (percentChange <= -25) {
+            color = "#E70000";
+          } else if (percentChange < 0) {
+            color = "#FF1818";
+          }
         } else if (percentChange > 0) {
-          color = "#34d399"; // Green for positive change
+          if (percentChange >= 75) {
+            color = "#0b6a3c";
+          } else if (percentChange >= 50) {
+            color = "#239b5d";
+          } else if (percentChange >= 25) {
+            color = "#34be76";
+          } else if (percentChange > 0) {
+            color = "#79d2a0";
+          }
         } else {
-          color = "#d2d2d292"; // Gray for no change
+          color = "#d2d2d292";
         }
       }
     }
