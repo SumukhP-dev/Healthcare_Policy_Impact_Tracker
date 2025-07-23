@@ -3,28 +3,25 @@ import { setStatistics } from "../src/app/store/features/statisticsSlice";
 import { useDispatch, useSelector } from "react-redux";
 
 const LawSelectors = () => {
-  const setMortalityStatistics = () => {
-    const dispatch = useDispatch();
+  const setMortalityStatistics = (dispatch) => {
     dispatch(setStatistics("Mortality"));
 
     console.log("Mortality statistics selected");
   };
 
-  const setInfantMortalityStatistics = () => {
-    const dispatch = useDispatch();
+  const setInfantMortalityStatistics = (dispatch) => {
     dispatch(setStatistics("InfantMortality"));
 
     console.log("Infant Mortality statistics selected");
   };
 
-  const setCountyOrganizedHealthSystemStatistics = () => {
-    const dispatch = useDispatch();
+  const setCountyOrganizedHealthSystemStatistics = (dispatch) => {
     dispatch(setStatistics("CountyOrganizedHealthSystem"));
 
     console.log("County Organized Health System statistics selected");
   };
 
-  let statistics: string = useSelector((state: any) => state.statistics.value);
+  const dispatch = useDispatch();
 
   return (
     <div className="">
@@ -45,19 +42,25 @@ const LawSelectors = () => {
         </button>
         <ul className="dropdown-menu">
           <li>
-            <a className="dropdown-item" onClick={setMortalityStatistics}>
+            <a
+              className="dropdown-item"
+              onClick={() => setMortalityStatistics(dispatch)}
+            >
               Mortality
             </a>
           </li>
           <li>
-            <a className="dropdown-item" onClick={setInfantMortalityStatistics}>
+            <a
+              className="dropdown-item"
+              onClick={() => setInfantMortalityStatistics(dispatch)}
+            >
               Infant Mortality
             </a>
           </li>
           <li>
             <a
               className="dropdown-item"
-              onClick={setCountyOrganizedHealthSystemStatistics}
+              onClick={() => setCountyOrganizedHealthSystemStatistics(dispatch)}
             >
               County Organized Health System
             </a>

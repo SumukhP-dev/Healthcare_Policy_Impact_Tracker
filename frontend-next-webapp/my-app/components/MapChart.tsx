@@ -2334,7 +2334,7 @@ const getInfantMortalityDataDetails = () => {
   //   data: data,
   //   error: error,
   // };
-  [
+  const data = [
     {
       Tuolumne: [
         { Years: 2018, predicted_mean: 67.0, "% Change": null },
@@ -4168,6 +4168,8 @@ const getInfantMortalityDataDetails = () => {
       ],
     },
   ];
+
+  return data;
 };
 
 const getCohsDataDetails = () => {
@@ -4678,7 +4680,7 @@ const MapChart = ({
         }
       }
     } else if (statistics === "InfantMortality") {
-      console.log("InfantMortality data:", mortalityData);
+      console.log("InfantMortality data:", infantMortalityData);
 
       let value = null;
       infantMortalityData.find((d) => {
