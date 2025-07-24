@@ -6,14 +6,18 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "test": "jest",
+    "test:e2e": "playwright test"
   },
   "dependencies": {
+    "@babel/preset-env": "^7.28.0",
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.1",
     "@mui/material": "^7.2.0",
     "@reduxjs/toolkit": "^2.8.2",
     "axios": "^1.10.0",
+    "babel-jest": "^30.0.5",
     "bootstrap": "^5.3.7",
     "d3-fetch": "^3.0.1",
     "d3-scale": "^4.0.2",
@@ -34,9 +38,16 @@
     "zustand": "^5.0.6"
   },
   "devDependencies": {
+    "@babel/preset-typescript": "^7.27.1",
     "@eslint/eslintrc": "^3",
+    "@jest/globals": "^30.0.5",
+    "@playwright/test": "^1.54.1",
     "@tailwindcss/postcss": "^4",
+    "@testing-library/dom": "^10.4.0",
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/react": "^16.3.0",
     "@types/eslint": "^8.4.3",
+    "@types/jest": "^30.0.0",
     "@types/jquery": "^3.5.32",
     "@types/node": "^20.19.9",
     "@types/react": "^19",
@@ -45,8 +56,12 @@
     "@types/react-tooltip": "^3.11.0",
     "eslint": "^9",
     "eslint-config-next": "15.3.5",
+    "jest": "^30.0.5",
+    "jest-environment-jsdom": "^30.0.5",
     "json-loader": "^0.5.7",
     "tailwindcss": "^4",
+    "ts-jest": "^29.4.0",
+    "ts-node": "^10.9.2",
     "typescript": "^5"
   }
 }

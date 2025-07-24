@@ -1,37 +1,18 @@
 "use client";
 
-import axios, { AxiosResponse } from "axios";
 import {
   ZoomableGroup,
   ComposableMap,
   Geographies,
   Geography,
 } from "react-simple-maps";
-import React, { memo, use, useEffect, useState } from "react";
+import React, { memo, useEffect, useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css"; // Import bootstrap CSS
-import ReactTooltip from "react-tooltip";
-import { Tooltip } from "react-bootstrap";
-import { scaleLinear } from "d3-scale";
-import path from "path";
 import { useSelector, useDispatch } from "react-redux";
-import { countySlice } from "../src/app/store/features/countySlice";
-import { percentSlice } from "../src/app/store/features/percentSlice";
 import { setCounty } from "../src/app/store/features/countySlice";
 import { setPercent } from "../src/app/store/features/percentSlice";
-import useSWR, { mutate } from "swr";
-import { useRouter } from "next/navigation";
-
-// const fetcher = (url) => fetch(url).then((res) => res.json());
 
 const getMortalityDataDetails = () => {
-  // const { data, error } = useSWR(
-  //   "https://raw.githubusercontent.com/SumukhP-dev/Healthcare_Policy_Impact_Tracker/refs/heads/main/frontend-next-webapp/my-app/public/datasets/2019-medi-cal-expansions/mortality-data/mortality_merged_json_datasets.json",
-  //   fetcher
-  // );
-  // return {
-  //   data: data,
-  //   error: error,
-  // };
   const data = [
     {
       Tuolumne: [
@@ -2265,14 +2246,6 @@ const getMortalityDataDetails = () => {
 };
 
 const getInfantMortalityDataDetails = () => {
-  // const { data, error, isLoading } = useSWR(
-  //   "https://raw.githubusercontent.com/SumukhP-dev/Healthcare_Policy_Impact_Tracker/refs/heads/main/frontend-next-webapp/my-app/public/datasets/2019-medi-cal-expansions/infant-mortality-data/infant_mortality_merged_json_datasets.json",
-  //   fetcher
-  // );
-  // return {
-  //   data: data,
-  //   error: error,
-  // };
   const data = [
     {
       Tuolumne: [
@@ -4112,14 +4085,6 @@ const getInfantMortalityDataDetails = () => {
 };
 
 const getCohsDataDetails = () => {
-  // const { data, error, isLoading } = useSWR(
-  //   "https://raw.githubusercontent.com/SumukhP-dev/Healthcare_Policy_Impact_Tracker/refs/heads/main/frontend-next-webapp/my-app/public/datasets/2019-medi-cal-expansions/cohs-data/cohs_merged_json_datasets.json",
-  //   fetcher
-  // );
-  // return {
-  //   data: data,
-  //   error: error,
-  // };
   const data = [
     {
       "Santa Barbara": [
@@ -4550,6 +4515,96 @@ const getCohsDataDetails = () => {
   return data;
 };
 
+const getMortalityDataColor = (percentChange: number) => {
+  let color = "#000000"; // Default color
+
+  if (percentChange < 0) {
+    if (percentChange <= -75) {
+      color = "#0b6a3c";
+    } else if (percentChange <= -50) {
+      color = "#239b5d";
+    } else if (percentChange <= -25) {
+      color = "#34be76";
+    } else if (percentChange < 0) {
+      color = "#79d2a0";
+    }
+  } else if (percentChange > 0) {
+    if (percentChange >= 75) {
+      color = "#820000";
+    } else if (percentChange >= 50) {
+      color = "#B30000";
+    } else if (percentChange >= 25) {
+      color = "#E70000";
+    } else if (percentChange > 0) {
+      color = "#FF1818";
+    }
+  } else {
+    color = "#d2d2d292";
+  }
+
+  return color;
+};
+
+const getInfantMortalityDataColor = (percentChange: number) => {
+  let color = "#000000"; // Default color
+
+  if (percentChange < 0) {
+    if (percentChange <= -75) {
+      color = "#0b6a3c";
+    } else if (percentChange <= -50) {
+      color = "#239b5d";
+    } else if (percentChange <= -25) {
+      color = "#34be76";
+    } else if (percentChange < 0) {
+      color = "#79d2a0";
+    }
+  } else if (percentChange > 0) {
+    if (percentChange >= 75) {
+      color = "#820000";
+    } else if (percentChange >= 50) {
+      color = "#B30000";
+    } else if (percentChange >= 25) {
+      color = "#E70000";
+    } else if (percentChange > 0) {
+      color = "#FF1818";
+    }
+  } else {
+    color = "#d2d2d292";
+  }
+
+  return color;
+};
+
+const getCohsDataColor = (percentChange: number) => {
+  let color = "#000000"; // Default color
+
+  if (percentChange < 0) {
+    if (percentChange <= -75) {
+      color = "#820000";
+    } else if (percentChange <= -50) {
+      color = "#B30000";
+    } else if (percentChange <= -25) {
+      color = "#E70000";
+    } else if (percentChange < 0) {
+      color = "#FF1818";
+    }
+  } else if (percentChange > 0) {
+    if (percentChange >= 75) {
+      color = "#0b6a3c";
+    } else if (percentChange >= 50) {
+      color = "#239b5d";
+    } else if (percentChange >= 25) {
+      color = "#34be76";
+    } else if (percentChange > 0) {
+      color = "#79d2a0";
+    }
+  } else {
+    color = "#d2d2d292";
+  }
+
+  return color;
+};
+
 const MapChart = ({
   setTooltipContent,
 }: {
@@ -4610,29 +4665,7 @@ const MapChart = ({
 
       const percentChange = value ? value["% Change"] : null;
       if (percentChange !== null) {
-        if (percentChange < 0) {
-          if (percentChange <= -75) {
-            color = "#0b6a3c";
-          } else if (percentChange <= -50) {
-            color = "#239b5d";
-          } else if (percentChange <= -25) {
-            color = "#34be76";
-          } else if (percentChange < 0) {
-            color = "#79d2a0";
-          }
-        } else if (percentChange > 0) {
-          if (percentChange >= 75) {
-            color = "#820000";
-          } else if (percentChange >= 50) {
-            color = "#B30000";
-          } else if (percentChange >= 25) {
-            color = "#E70000";
-          } else if (percentChange > 0) {
-            color = "#FF1818";
-          }
-        } else {
-          color = "#d2d2d292";
-        }
+        color = getMortalityDataColor(percentChange);
       }
     } else if (statistics === "InfantMortality") {
       console.log("InfantMortality data:", infantMortalityData);
@@ -4661,29 +4694,7 @@ const MapChart = ({
 
       const percentChange = value ? value["% Change"] : null;
       if (percentChange !== null) {
-        if (percentChange < 0) {
-          if (percentChange <= -75) {
-            color = "#0b6a3c";
-          } else if (percentChange <= -50) {
-            color = "#239b5d";
-          } else if (percentChange <= -25) {
-            color = "#34be76";
-          } else if (percentChange < 0) {
-            color = "#79d2a0";
-          }
-        } else if (percentChange > 0) {
-          if (percentChange >= 75) {
-            color = "#820000";
-          } else if (percentChange >= 50) {
-            color = "#B30000";
-          } else if (percentChange >= 25) {
-            color = "#E70000";
-          } else if (percentChange > 0) {
-            color = "#FF1818";
-          }
-        } else {
-          color = "#d2d2d292";
-        }
+        color = getInfantMortalityDataColor(percentChange);
       }
     } else if (statistics === "CountyOrganizedHealthSystem") {
       console.log("CountyOrganizedHealthSystem data:", cohsData);
@@ -4720,29 +4731,7 @@ const MapChart = ({
 
       const percentChange = value ? value["% Change"] : null;
       if (percentChange !== null) {
-        if (percentChange < 0) {
-          if (percentChange <= -75) {
-            color = "#820000";
-          } else if (percentChange <= -50) {
-            color = "#B30000";
-          } else if (percentChange <= -25) {
-            color = "#E70000";
-          } else if (percentChange < 0) {
-            color = "#FF1818";
-          }
-        } else if (percentChange > 0) {
-          if (percentChange >= 75) {
-            color = "#0b6a3c";
-          } else if (percentChange >= 50) {
-            color = "#239b5d";
-          } else if (percentChange >= 25) {
-            color = "#34be76";
-          } else if (percentChange > 0) {
-            color = "#79d2a0";
-          }
-        } else {
-          color = "#d2d2d292";
-        }
+        color = getCohsDataColor(percentChange);
       }
     }
 
@@ -4915,3 +4904,4 @@ const MapChart = ({
 };
 
 export default memo(MapChart);
+export { getMortalityDataColor, getInfantMortalityDataColor, getCohsDataColor };

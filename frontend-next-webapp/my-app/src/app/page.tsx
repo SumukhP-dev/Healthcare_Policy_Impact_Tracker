@@ -8,7 +8,6 @@ import LawSelectors from "../../components/LawSelectors";
 import "bootstrap/dist/css/bootstrap.min.css"; // Import bootstrap CSS
 import TimeLine from "../../components/TimeLine";
 import DetailsWidget from "../../components/DetailsWidget";
-import { SWRProvider } from "./swr-provider";
 
 export default function App() {
   const [content, setContent] = useState("");
@@ -19,12 +18,10 @@ export default function App() {
 
   return (
     <div className="flex h-screen w-screen grid cols-5">
-      <SWRProvider>
-        <LawSelectors />
-        <MapChart setTooltipContent={setContent} />
-        <DetailsWidget />
-        <TimeLine />
-      </SWRProvider>
+      <LawSelectors />
+      <MapChart setTooltipContent={setContent} />
+      <DetailsWidget />
+      <TimeLine />
     </div>
   );
 }
