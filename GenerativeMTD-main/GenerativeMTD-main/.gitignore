@@ -1,7 +1,0 @@
-.neptune/
-__pycache__/
-*.log
-*.txt
-Code logs
-Results/*.csv
-Model/*.pt
