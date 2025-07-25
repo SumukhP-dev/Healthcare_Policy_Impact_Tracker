@@ -7,8 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "test": "jest",
-    "test:e2e": "playwright test"
+    "test": "jest"
   },
   "dependencies": {
     "@babel/preset-env": "^7.28.0",
