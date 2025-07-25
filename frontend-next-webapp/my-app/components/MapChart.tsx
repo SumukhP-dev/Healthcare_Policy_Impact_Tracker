@@ -232,6 +232,10 @@ const MapChart = ({
       }
     }
 
+    if (color == "#000000") {
+      dispatch(setPercent("null"));
+    }
+
     return color;
   };
 
