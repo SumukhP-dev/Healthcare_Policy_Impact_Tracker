@@ -6,7 +6,7 @@ import percentReducer from "./features/percentSlice";
 import yearReducer from "./features/yearSlice";
 import statisticsReducer from "./features/statisticsSlice";
 
-export const store = configureStore({
+const store = configureStore({
   reducer: {
     county: countyReducer,
     percent: percentReducer,
@@ -14,3 +14,6 @@ export const store = configureStore({
     statistics: statisticsReducer,
   },
 });
+
+export type RootState = ReturnType<typeof store.getState>
+export default store;

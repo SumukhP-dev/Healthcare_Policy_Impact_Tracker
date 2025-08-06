@@ -1,10 +1,9 @@
-import { useState } from "react";
 import { setStatistics } from "../src/app/store/features/statisticsSlice";
 import { useDispatch, useSelector } from "react-redux";
+import { RootState } from "../src/app/store/store.tsx";
 
 const LawSelectors = () => {
-  let percent = useSelector((state: any) => state.percent.value);
-  let statistics = useSelector((state: any) => state.statistics.value);
+  const statistics = useSelector((state: RootState) => state.statistics.value);
 
   const setDropdownTitle = () => {
     if (statistics === "Mortality") {

@@ -3,10 +3,11 @@ import Box from "@mui/material/Box";
 import { ThemeProvider } from "@mui/material/styles";
 import Image from "next/image";
 import { useSelector } from "react-redux";
+import { RootState } from "../src/app/store/store.tsx";
 
 export default function BoxSx() {
-  let statistics = useSelector((state: any) => state.statistics.value);
-  let percent: string = useSelector((state: any) => state.percent.value);
+  const statistics = useSelector((state: RootState) => state.statistics.value);
+  const percent = useSelector((state: RootState) => state.percent.value);
 
   const arrowImagePathSelector = () => {
     console.log(
@@ -16,7 +17,7 @@ export default function BoxSx() {
       parseFloat(String(percent))
     );
     let path = "";
-    let percentValue = parseFloat(String(percent));
+    const percentValue = parseFloat(String(percent));
 
     if (statistics === "Mortality") {
       if (percentValue > 0) {
@@ -80,8 +81,8 @@ export default function BoxSx() {
         >
           <div className="flex flex-row justify-center items-center block">
             <h1>
-              {useSelector((state: any) => state.county.value)} <br></br>
-              {useSelector((state: any) => state.percent.value)}
+              {useSelector((state: RootState) => state.county.value)} <br></br>
+              {useSelector((state: RootState) => state.percent.value)}
             </h1>
             {arrowImagePathSelector()}
           </div>

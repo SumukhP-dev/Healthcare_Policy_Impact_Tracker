@@ -2,6 +2,7 @@ import React from "react";
 import { Chrono } from "react-chrono";
 import { useSelector, useDispatch } from "react-redux";
 import { setYear } from "../src/app/store/features/yearSlice";
+import { RootState } from "../src/app/store/store.tsx";
 
 const TimeLine = () => {
   const data = [
@@ -51,7 +52,7 @@ const TimeLine = () => {
       title: "2033",
     },
   ];
-  const year = useSelector((state: any) => state.year.value);
+  const year = useSelector((state: RootState) => state.year.value);
   const dispatch = useDispatch();
 
   const handleItemSelected = (item, index) => {

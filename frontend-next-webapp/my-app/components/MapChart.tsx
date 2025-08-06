@@ -11,6 +11,7 @@ import "bootstrap/dist/css/bootstrap.min.css"; // Import bootstrap CSS
 import { useSelector, useDispatch } from "react-redux";
 import { setCounty } from "../src/app/store/features/countySlice";
 import { setPercent } from "../src/app/store/features/percentSlice";
+import { RootState } from "../src/app/store/store.tsx";
 
 const getMortalityDataColor = (percentChange: number) => {
   let color = "#000000"; // Default color
@@ -102,18 +103,14 @@ const getCohsDataColor = (percentChange: number) => {
   return color;
 };
 
-const MapChart = ({
-  setTooltipContent,
-}: {
-  setTooltipContent: (content: string) => void;
-}) => {
-  const [mortalityData, setMortalityData] = useState(getMortalityDataDetails());
-  const [infantMortalityData, setInfantMortalityData] = useState(
+const MapChart = () => {
+  const [mortalityData] = useState(getMortalityDataDetails());
+  const [infantMortalityData] = useState(
     getInfantMortalityDataDetails()
   );
-  const [cohsData, setCohsData] = useState(getCohsDataDetails());
-  let statistics: string = useSelector((state: any) => state.statistics.value);
-  let year = useSelector((state: any) => state.year.value);
+  const [cohsData] = useState(getCohsDataDetails());
+  const statistics: string = useSelector((state: RootState) => state.statistics.value);
+  const year = useSelector((state: RootState) => state.year.value);
 
   useEffect(() => {
     console.log("Fetching mortality data: " + statistics);
@@ -363,7 +360,6 @@ const MapChart = ({
                     key={geo.rsmKey}
                     geography={geo}
                     onMouseEnter={() => {
-                      setTooltipContent("");
                       setCountyData(geo, dispatch);
                       setPercentChange(
                         geo,
@@ -375,7 +371,6 @@ const MapChart = ({
                       );
                     }}
                     onMouseLeave={() => {
-                      setTooltipContent("");
                     }}
                     style={{
                       default: {
