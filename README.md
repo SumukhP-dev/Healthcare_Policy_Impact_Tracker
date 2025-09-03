@@ -40,8 +40,14 @@ Change directory to frontend-next-webapp\my-app. Then run the npm install and np
 ### How to Visit
 Go to https://healthcare-policy-impact-tracker-3partlbri-sumukh-ps-projects.vercel.app/
 
+### Screens & Demo
+![Screenshot Placeholder](frontend-next-webapp/my-app/frontend-images/image1.png)
+![Screenshot Placeholder](frontend-next-webapp/my-app/frontend-images/image2.png)
+![Screenshot Placeholder](frontend-next-webapp/my-app/frontend-images/image3.png)
+
 ## Figma Designs
 
 ### How to Find
 
 All the various Figma designs are contained in the figma-designs folder.
+
