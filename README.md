@@ -1,5 +1,16 @@
 # Healthcare_Policy_Impact_Tracker
 
+## Project Summary
+- **Goal:** Analyze the impact of California healthcare policies on public health outcomes.  
+- **Data:** Collected and cleaned datasets on mortality, infant mortality, and healthcare access using **Python (Pandas)**.  
+- **Models:**  
+  - **ARIMA** for historical policy impact analysis.  
+  - **Gaussian Processes** to forecast outcomes for the next decade.  
+- **Tech Stack:** Python, Next.js, React, Google Colab, Node.js, Bootstrap.  
+- **Deliverables:**  
+  - Interactive **web app** visualizing trends for policymakers and the public.  
+  - Automated analysis pipeline for dataset cleaning, modeling, and visualization.  
+- **Key Skills Gained:** Data science, machine learning, time-series forecasting, full-stack development, and model evaluation.
 ## Data_filtering Notebook
 
 ### How to Run
@@ -50,4 +61,5 @@ Go to https://healthcare-policy-impact-tracker-3partlbri-sumukh-ps-projects.verc
 ### How to Find
 
 All the various Figma designs are contained in the figma-designs folder.
+
 
